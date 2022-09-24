@@ -307,11 +307,17 @@
 
     .img-responsive {
         width: 100%;
+        border-radius:10px;
+
     }
 
 }
 
+.img-responsive {
+    width: 100%;
+    border-radius:10px;
 
+}
 
 @media (max-width: 480px) {
 

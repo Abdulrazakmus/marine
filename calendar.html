@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <meta name="author" content="e-blue hub">
+  <meta name="keyword" content="blue, e-blue, hub, sea, e-market, Fish, ocean">
   <title>e-blue hub</title>
 
   <!-- Favicons -->
@@ -17,111 +17,116 @@
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
   <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="lib/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
+  <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
+  <!-- Custom styles  -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
+  <script src="lib/chart-master/Chart.js"></script>
 
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+  <!-- Home Links======================= -->
+  <!-- <link href="Home/css/animate.min.css" rel="stylesheet"> -->
+  <link href="Home/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="Home/css/contact-input-style.css" rel="stylesheet"> -->
+  <link href="Index/css/custom.css" rel="stylesheet">
+  <!-- <link href="Home/css/font-awesome.min.css" rel="stylesheet">
+  <link href="Home/css/hover-min.css" rel="stylesheet">
+  <link href="Home/css/loaders.css" rel="stylesheet">
+  <link href="Home/css/magnific-popup.css" rel="stylesheet">
+  <link href="Home/css/nivo-lightbox.css" rel="stylesheet">
+  <link href="Home/css/nivo_themes/default/default.css" rel="stylesheet"> -->
+
 </head>
 
+
+
 <body>
-  <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
-     <!--header start-->
-     <header class="header black-bg">
-      <div class="sidebar-toggle-box">
-        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-      </div>
-      <!--logo start-->
-      <a href="index.html" class="logo"><b>e - blue<span> hub</span></b></a>
-      <!--logo end-->
-      <div class="nav notify-row" id="top_menu">
-        <!--  notification start -->
-        <ul class="nav top-menu">
-      </div>
-      <div class="top-menu">
-        <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Logout</a></li>
-        </ul>
-      </div>
-    </header>
-    <!--header end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN SIDEBAR MENU
-        *********************************************************************************************************************************************************** -->
-    <!--sidebar start-->
-    <aside>
-      <div id="sidebar" class="nav-collapse ">
-        <!-- sidebar menu start-->
-        <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">e-Blue Hub</h5>
-          <li class="mt">
-            <a class="active" href="index.html">
-              <i class="fa fa-dashboard"></i>
-              <span>Species Statistic</span>
+    <section id="container">
+      <!-- **********************************************************************************************************************************************************
+          TOP BAR CONTENT & NOTIFICATIONS
+          *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a href="index.html" class="logo"><img src="img/icon.png" class="e-ion" alt="logo"></a>
+        <!--logo end-->
+        <div class="nav notify-row" id="top_menu">
+          <!--  notification start -->
+          <ul class="nav top-menu">
+        </div>
+        <div class="top-menu">
+          <ul class="nav pull-right top-menu">
+            <li><a class="logout" href="login.html">Log-in</a></li>
+          </ul>
+        </div>
+      </header>
+      <!--header end-->
+      <!-- **********************************************************************************************************************************************************
+          MAIN SIDEBAR MENU
+          *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+        <div id="sidebar" class="nav-collapse ">
+          <!-- sidebar menu start-->
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+            <h5 class="centered">e-Blue Hub</h5>
+            <li class="mt">
+              <a class="active" href="index.html">
+                <i class="fa fa-home"></i>
+                <span>Our Hub</span>
+                </a>
+            </li>
+            
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-cogs"></i>
+                <span>Blue Services</span>
+                </a>
+              <ul class="sub">
+                <li><a href="home.html"><i class="fa fa-bar-chart-o"></i>Blue Census</a></li>
+                <li><a href="google_maps.html"><i class="fa fa-anchor"></i>Deep Ocean</a> </a> </li>
+                
+              </ul>
+            </li>
+            
+
+
+            <li>
+              <a href="calendar.html"><i class="fa fa-money"></i>
+                Blue Market <i class="fa fa-level-down"></i></a>
+              <ul class="sub">
+                <li><a href="responsive_table.html"><i class="fa fa-dot-circle-o"></i>Fish</a></li>
+                <li><a href="responsive_table.html"><i class="fa fa-dot-circle-o"></i>Sea Weeds</a></li>
+                <li><a href="responsive_table.html"><i class="fa fa-dot-circle-o"></i>Sea Oysters</a></li>
+                <li><a href="responsive_table.html"><i class="fa fa-dot-circle-o"></i>Sea Ornamant</a></li>
+                <li><a href="responsive_table.html"><i class="fa fa-dot-circle-o"></i>Sea Cucumber</a></li>
+              </ul>
+            </li>
+  
+
+
+
+
+            <li class="sub-menu">
+              <a href="google_maps.html">
+                <i class="fa fa-map-marker"></i>
+                <span>Blue Pointers</span>
               </a>
-          </li>
-          
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-cogs"></i>
-              <span>Components</span>
-              </a>
-            <ul class="sub">
-              <li><a href="gallery.html">Species Characteristics</a></li>
-              <li><a href="google_maps.html">Species Locations</a> </a> </li>
-
-              <li><a href="calendar.html">Calendar</a></li>
-            </ul>
-          </li>
-          
+            </li>
+          </ul>
+  
+          <!-- sidebar menu end-->
+  
+        </div>
+      </aside>
+  
+      <!--sidebar end-->
 
 
-         
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-th"></i>
-              <span>Data Tables</span>
-              </a>
-            <ul class="sub">
-              <li><a href="responsive_table.html">Table</a></li>
-            </ul>
-          </li>
-
-
-
-
-
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-money"></i>
-              <span>e-Blue Market</span>
-              </a>
-            <ul class="sub">
-              <li><a href="responsive_table.html">Fish</a></li>
-              <li><a href="responsive_table.html">Timber</a></li>
-              <li><a href="responsive_table.html">Sea Cock</a></li>
-              <li><a href="responsive_table.html">Sea Oysters</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <!-- sidebar menu end-->
-
-      </div>
-    </aside>
-
-    <!--sidebar end-->
-<!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
@@ -162,36 +167,103 @@
     </section>
     <!-- /MAIN CONTENT -->
     <!--main content end-->
+
+  
     <!--footer start-->
     <footer class="site-footer">
-      <div class="text-center">
-        <p>
-          &copy; Copyrights <strong>e-blue market</strong>. All Rights Reserved
-        </p>
-        <div class="credits">
-          
-          <p class="m-0 text-white-50">Developed by <a href="https://api.whatsapp.com/send?phone=255778415671&text=Hello! Abdulrazak Mustafa, I Would Like to....">Team e-blue hub</a>
-          </div>
-        <a href="index.html#" class="go-top">
-          <i class="fa fa-angle-up"></i>
-          </a>
-      </div>
-    </footer>
-    <!--footer end-->
-  </section>
-  <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
-  <script src="lib/fullcalendar/fullcalendar.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="lib/jquery.scrollTo.min.js"></script>
-  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <!--common script for all pages-->
-  <script src="lib/common-scripts.js"></script>
-  <!--script for this page-->
-  <script src="lib/calendar-conf-events.js"></script>
-
-</body>
-
-</html>
+        <div class="text-center">
+          <p>
+            &copy; Copyrights <strong>e-Blue Hub</strong>. All Rights Reserved
+          </p>
+          <div class="credits">
+            
+            <p class="m-0 text-white-50">Developed by <a href="https://api.whatsapp.com/send?phone=255778415671&text=Hello! Abdulrazak Mustafa, I Would Like to....">Team e-blue hub</a>
+            </div>
+          <a href="index.html#" class="go-top">
+            <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+      </footer>
+      <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="lib/jquery/jquery.min.js"></script>
+  
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="lib/jquery.scrollTo.min.js"></script>
+    <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="lib/jquery.sparkline.js"></script>
+    <!--common script for all pages-->
+    <script src="lib/common-scripts.js"></script>
+    <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="lib/gritter-conf.js"></script>
+    <!--script for this page-->
+    <script src="lib/sparkline-chart.js"></script>
+    <script src="lib/zabuto_calendar.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var unique_id = $.gritter.add({
+          // (string | mandatory) the heading of the notification
+          title: 'Welcome to e-Blue Hub!',
+          // (string | mandatory) the text inside the notification
+          text: 'e-Blue Hub uses cookies to provide necessary site functionality and improve your user experience. By using our website, you agree to our privacy policy and our cookie policy.  ',
+          // (string | optional) the image to display on the left
+          image: 'img/welcome.png',
+          // (bool | optional) if you want it to fade out on its own or just sit there
+          sticky: false,
+          // (int | optional) the time you want it to be alive for before fading out
+          time: 8000,
+          // (string | optional) the class name you want to apply to that specific message
+          class_name: 'my-sticky-class'
+        });
+  
+        return false;
+      });
+    </script>
+    <script type="application/javascript">
+      $(document).ready(function() {
+        $("#date-popover").popover({
+          html: true,
+          trigger: "manual"
+        });
+        $("#date-popover").hide();
+        $("#date-popover").click(function(e) {
+          $(this).hide();
+        });
+  
+        $("#my-calendar").zabuto_calendar({
+          action: function() {
+            return myDateFunction(this.id, false);
+          },
+          action_nav: function() {
+            return myNavFunction(this.id);
+          },
+          ajax: {
+            url: "show_data.php?action=1",
+            modal: true
+          },
+          legend: [{
+              type: "text",
+              label: "Special event",
+              badge: "00"
+            },
+            {
+              type: "block",
+              label: "Regular event",
+            }
+          ]
+        });
+      });
+  
+      function myNavFunction(id) {
+        $("#date-popover").hide();
+        var nav = $("#" + id).data("navigation");
+        var to = $("#" + id).data("to");
+        console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+      }
+    </script>
+  </body>
+  
+  </html>
+  

@@ -430,26 +430,16 @@ ul.sidebar-menu li a.active i {
     width: 100%;
 }
 
-a.logo {
-    font-size: 24px;
-    color: #f2f2f2;
+a.logo .e-ion{
+    width:130px;
+    height:70px;
+    font-size: 25px;
     float: left;
-    margin-top: 15px;
+    margin-top: 0px;
     text-transform: uppercase;
 }
 
-a.logo b {
-    font-weight: 900;
-}
 
-a.logo:hover, a.logo:focus {
-    text-decoration: none;
-    outline: none;
-}
-
-a.logo span {
-    color: #4ECDC4;
-}
 
 
 /*notification*/
