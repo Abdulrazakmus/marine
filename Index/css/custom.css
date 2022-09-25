@@ -47,16 +47,27 @@ h3 {
   padding-bottom: 10px;
   text-transform: capitalize;
 }
+.deep-details{
+  Color:#4ECDC4;
+}
+
+
+
+.deep-details-1{
+  Color:#fff;
+}
 
 
 .btn-capsul{
-    border-radius: 30px;
+    border-radius: 50px;
+    border:#4ECDC4;
 }
 
 .card-button{
-    border:2px solid #4ecdc4;
-    color: #4ecdc4;
-    background: transparent;
+    border:5px solid #4ecdc4;
+  
+    color: #4ECDC4;
+    /* background: #4ecdc4; */
     transition: 0.5s;
 }
 
@@ -197,7 +208,7 @@ background: linear-gradient(120deg, #7b4397 , #dc2430); /* W3C, IE 10+/ Edge, Fi
 
 /*-------------- Feature section --------------*/
 #todo .feature-thumb {
-  background-color: #ffffff;
+  background-color:transparent;
   position: relative;
   padding: 40px;
   margin-top: 32px;
