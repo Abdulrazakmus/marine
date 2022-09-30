@@ -243,6 +243,7 @@ background: linear-gradient(120deg, #7b4397 , #dc2430); /* W3C, IE 10+/ Edge, Fi
 }
 
 #todo p{
+  text-align:justify;
     font-size: 16px;
     font-weight: 300;
 }

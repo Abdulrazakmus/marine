@@ -316,6 +316,7 @@
 }
 
 .img-responsive {
+    padding-top:30px;
     width: 100%;
     margin-bottom:30px;
     border-radius:10px;
