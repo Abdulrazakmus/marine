@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+  <title>Zanzibar Map</title>
+  <!-- BOOTSTRAP CORE STYLE  -->
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <!-- FONT AWESOME ICONS  -->
+  <link href="css/font-awesome.css" rel="stylesheet" />
+  <!-- CUSTOM STYLE  -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+
+  <script type="text/javascript" src="dist/leaflet.ajax.min.js"></script>
+  <!-- <style>
+
+ #mapid { height: 70px;
+          width:700px; }
+.b:hover {
+  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+}
+a{
+	color:white;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #c30b82;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+
+.marker-pin::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    margin: 3px 0 0 3px;
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
+ }
+
+
+.custom-div-icon i {
+   position: absolute;
+   width: 22px;
+   font-size: 22px;
+   left: 0;
+   right: 0;
+   margin: 10px auto;
+   text-align: center;
+}
+
+.custom-div-icon i.awesome {
+    margin: 12px auto;
+    font-size: 17px;
+ }
+</style> -->
+
+</head>
+
+<body>
+  <!-- MENU SECTION END-->
+  <div class="col-md-12">
+
+    <div id="mapid" style="width: 100%; height: 800px; border: 1px solid #ccc"></div>
+
+  </div>
+  </div>
+
+
+  <script src="dist/leaflet.groupedlayercontrol.min.js"></script>
+  <script src="dist/leaflet.groupedlayercontrol.min.js.map"></script>
+  <script src="dist/leaflet.shpfile.js"></script>
+  <script src="dist/shp.js"></script>
+
+  <script src="dist/shp.min.js"> </script>
+
+
+  <script>
+
+    //-6.1655/39.2033
+    var mymap = L.map('mapid').setView([-6.1655, 39.2033], 10);
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 20,
+      id: 'mapbox.streets',
+      accessToken: 'pk.eyJ1IjoiYmluYm9uaXkiLCJhIjoiY2swa2VhdDB0MGl5OTNsbGlnMWduMmd0ZiJ9.XajWTPyAcPtxvcxIVZmg3Q',
+    }).addTo(mymap);
+
+
+
+    // add a scale at at your map.
+    var scale = L.control.scale().addTo(mymap);
+
+
+
+    //////////////////////////////
+
+
+
+    var osm = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"),
+
+      googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {maxZoom: 20, subdomains: ['mt0', 'mt1', 'mt2', 'mt3']}),
+
+
+
+      mqi = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {maxZoom: 20, subdomains: ['mt0', 'mt1', 'mt2', 'mt3']});
+
+    var baseMaps = {
+      "OpenStreetMap": osm,
+      "GoogleStreets": mqi,
+      "Google view": googleStreets
+
+
+    };
+
+    var overlays = {//add any overlays here
+
+
+
+    };
+
+    L.control.layers(baseMaps, overlays, {position: 'topright'}).addTo(mymap);
+
+
+
+
+
+
+    var north = L.control({position: "bottomleft"});
+    north.onAdd = function (mymap) {
+      var div = L.DomUtil.create("div");
+      div.innerHTML = '<img style="width:20%;margin-left:10%;"src="dist/north5.png">';
+      return div;
+    }
+    north.addTo(mymap);
+
+
+
+    function popUp(f, l) {
+      var out = [];
+      if (f.properties) {
+        for (key in f.properties) {
+          out.push(key + ": " + f.properties[key]);
+        }
+        l.bindPopup(out.join("<br />"));
+      }
+    }
+
+    var iconm = L.divIcon({
+      className: 'custom-div-icon',
+      html: "<div style='background-color:red;' class='marker-pin'></div><i class='fa fa-home awesome'>",
+      iconSize: [30, 42],
+      iconAnchor: [1, 42] // half of width + height
+    });
+
+    icon = L.divIcon({
+      className: 'custom-div-icon',
+      html: "<div style='background-color:#00004d;' class='marker-pin'></div><i class='fa fa-home awesome'>",
+      iconSize: [32, 44],
+      iconAnchor: [18, 44]
+    });
+
+    iconh = L.divIcon({
+      className: 'custom-div-icon',
+      html: "<div style='background-color:yellow;' class='marker-pin'></div><i class='fa fa-home awesome'>",
+      iconSize: [40, 42],
+      iconAnchor: [15, 42]
+    });
+
+  // /**/var jsonTest = new L.GeoJSON.AJAX(["shehia.geojson"],{onEachFeature:popUp}).addTo(mymap);
+
+
+  </script>
+
+  <script>
+<? php
+
+$db = new PDO('mysql:host=localhost;dbname=crime_db', 'root', '');
+
+    $sql = 'SELECT * FROM crime_db.registered_case where type_of_cases="ubakaji"';
+    $stmt = $db -> prepare($sql);
+    $stmt -> execute();
+    $row = $stmt -> fetchAll(PDO:: FETCH_ASSOC);
+    foreach($row as $rows){
+      $lat = $rows['latitude'];
+      $log = $rows['longitude'];
+      $name = $rows['address'];
+      $location = $rows['type_of_cases'];
+
+
+
+?>
+  var marker = L.marker([<? php echo $lat; ?>,<? php echo $log; ?>], {icon: icon}).addTo(mymap)
+        .bindPopup('Types of case :  <?php echo $location;?><br> Location :  <?php echo $name;?>'
+        )
+        .openPopup();
+
+  <? php } ?>
+  </script>
+
+  <script>
+<? php
+
+
+$sql = 'SELECT * FROM crime_db.registered_case where type_of_cases="wizi"';
+    $stmt = $db -> prepare($sql);
+    $stmt -> execute();
+    $row = $stmt -> fetchAll(PDO:: FETCH_ASSOC);
+    foreach($row as $rows){
+      $lat = $rows['latitude'];
+      $log = $rows['longitude'];
+      $name = $rows['address'];
+      $location = $rows['type_of_cases'];
+
+?>
+  var marker = L.marker([<? php echo $lat; ?>,<? php echo $log; ?>], {icon: iconm}).addTo(mymap)
+        .bindPopup('Type of case :  <?php echo $location;?><br> Location :  <?php echo $name;?>'
+        )
+        .openPopup();
+
+  <? php } ?>
+
+
+   <? php
+
+
+
+$sql = 'SELECT * FROM crime_db.registered_case where type_of_cases="ujambazi"';
+
+    $stmt = $db -> prepare($sql);
+    $stmt -> execute();
+    $row = $stmt -> fetchAll(PDO:: FETCH_ASSOC);
+    foreach($row as $rows){
+      $lat = $rows['latitude'];
+      $log = $rows['longitude'];
+      $name = $rows['address'];
+      $location = $rows['type_of_cases'];
+
+?>
+  var marker = L.marker([<? php echo $lat; ?>,<? php echo $log; ?>], {icon: iconh}).addTo(mymap)
+        .bindPopup('Type of case :  <?php echo $location;?><br> Location :  <?php echo $name;?>'
+        )
+        .openPopup();
+
+  <? php } ?>
+  </script>
+
+
+
+  <!-- FOOTER SECTION END-->
+  <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+  <!-- CORE JQUERY SCRIPTS -->
+  <script src="js/jquery-1.11.1.js"></script>
+  <!-- BOOTSTRAP SCRIPTS  -->
+  <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
